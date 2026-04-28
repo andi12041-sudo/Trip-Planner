@@ -35,7 +35,7 @@ export default function PlanPage({ isDark, setIsDark }: Props) {
   const [dates, setDates] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>('');
   const [viewMode, setViewMode] = useState<ViewMode>('list');
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const [modal, setModal] = useState<ModalState>({ open: false, mode: 'create' });
   const [datePicker, setDatePicker] = useState<DatePickerState>({ open: false, action: null });
