@@ -1,0 +1,397 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.loadingScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+/* ── 헤더 ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 20px;
+  height: 60px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.backBtn {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.backBtn:hover {
+  background: var(--color-bg-hover);
+}
+
+.planName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.planMeta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.copyBtn {
+  padding: 7px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background: var(--color-bg-hover);
+}
+
+.copied {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ── 바디 ── */
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── 사이드바 ── */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--color-bg-secondary);
+}
+
+.dateList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 8px;
+  flex: 1;
+}
+
+.dateBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  text-align: left;
+  transition: background 0.12s;
+  width: 100%;
+}
+
+.dateBtn:hover {
+  background: var(--color-bg-hover);
+}
+
+.dateBtnActive {
+  background: var(--color-accent-light) !important;
+}
+
+.dateBtnActive .dayNum,
+.dateBtnActive .dateStr {
+  color: var(--color-accent);
+}
+
+.dayNum {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dateStr {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.scheduleCount {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.budgetBox {
+  padding: 14px 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.budgetLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.budgetValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* ── 메인 콘텐츠 ── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.contentTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.viewToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 3px;
+}
+
+.toggleBtn {
+  padding: 5px 14px;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  transition: background 0.12s, color 0.12s;
+}
+
+.toggleBtn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text);
+}
+
+.toggleActive {
+  background: var(--color-bg) !important;
+  color: var(--color-accent) !important;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.addBtnHeader {
+  padding: 5px 14px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 4px;
+  transition: background 0.15s;
+}
+
+.addBtnHeader:hover {
+  background: var(--color-accent-hover);
+}
+
+.viewArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* ── 날짜 선택 팝업 ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.datePicker {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+}
+
+.datePickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.datePickerHeader h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.datePickerHeader button {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.1s;
+}
+
+.datePickerHeader button:hover {
+  background: var(--color-bg-hover);
+}
+
+.datePickerList {
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.datePickerBtn {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-text);
+  border-radius: var(--radius);
+  transition: background 0.1s;
+}
+
+.datePickerBtn:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+}
+
+.datePickerBtn:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.currentBadge {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* ── 모바일 반응형 ── */
+@media (max-width: 768px) {
+  .page {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .body {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+  }
+
+  .dateList {
+    flex-direction: row;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .dateBtn {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .budgetBox {
+    display: none;
+  }
+
+  .content {
+    overflow: visible;
+  }
+
+  .viewArea {
+    overflow: visible;
+  }
+
+  .gridOnlyDesktop {
+    display: none;
+  }
+
+  .planMeta {
+    display: none;
+  }
+}
